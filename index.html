@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>UPA24h Dona Zulmira Soares</title>
+    <link rel="shortcut icon" href="upa2.ico">
+</head>
+
+<body>
+    <div class="top-header">
+        <div class="header-content">
+            <!-- Conteúdo do cabeçalho -->
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Escalas UPA24H - Zulmira Soares</h1>
+        <form id="scheduleForm">
+            <fieldset>
+                <legend>Informações de Escala</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="category">Categoria:</label>
+                        <select id="category" required>
+                            <option value="">Selecione a Categoria</option>
+                            <option value="Médico">Médico</option>
+                            <option value="Enfermeiro">Enfermeiro</option>
+                            <option value="Técnico de Enfermagem">Técnico de Enfermagem</option>
+                            <option value="Auxiliar de Enfermagem">Auxiliar de Enfermagem</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nome do Servidor:</label>
+                        <input type="text" id="name" placeholder="Nome do Servidor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sector">Setor:</label>
+                        <select id="sector" required>
+                            <option value="">Selecione o Setor</option>
+                            <option value="Estabilização">Estabilização</option>
+                            <option value="Acolhimento">Acolhimento</option>
+                            <option value="CMD">CMD</option>
+                            <option value="Procedimentos">Procedimentos</option>
+                            <option value="Cliníca Médica">Cliníca Médica</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="shift">Turno:</label>
+                        <select id="shift" required>
+                            <option value="">Selecione o Turno</option>
+                            <option value="12H">Plantão 12 Horas</option>
+                            <option value="24H">Plantão 24 Horas</option>
+                            <option value="36H">Plantão 36 Horas</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Data de Entrada:</label>
+                        <input type="date" class="Data" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="startTime">Hora de Entrada:</label>
+                        <input type="time" class="Hora" id="startTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">Data de Saída:</label>
+                        <input type="date" class="Data" id="endDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">Hora de Saída:</label>
+                        <input type="time" class="Hora" id="endTime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="workHours">Horas Trabalhadas:</label>
+                        <input type="text" class="Hora" id="workHours" readonly>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="buttons-container">
+        <button type="button" id="addButton" onclick="addOrUpdateEntry()">Adicionar</button>
+        <button type="button" id="generatePDFButton">Gerar PDF</button>
+        <button type="button" id="generateExcelButton">Gerar Excel</button>
+        <button id="logoutButton">Sair do Sistema</button>
+
+    </div>
+
+    <div class="container">
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Nome</th>
+                    <th>Setor</th>
+                    <th>Turno</th>
+                    <th>Data de Entrada</th>
+                    <th>Hora de Entrada</th>
+                    <th>Data de Saída</th>
+                    <th>Hora de Saída</th>
+                    <th>Horas Trabalhadas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <h2>Escala do Mês</h2><!-- Entradas da tabela -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function handleLogoutClick() {
+            // Aqui você pode colocar o código para realizar o logout
+            console.log('Logout iniciado');
+            // Exemplo: Redirecionar para a página de login ou limpar dados de usuário
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+
+        document.getElementById('logoutButton').addEventListener('click', function () {
+            // Aqui você pode colocar o código para realizar o logout
+            // console.log('Logout iniciado');
+
+            // Exemplo: Redirecionar para a página de login
+            window.location.href = 'login.html';
+
+            // Ou limpar dados de usuário armazenados (se houver)
+            // localStorage.clear(); // Exemplo de limpeza de dados de sessão
+        });
+    </script>
+
+
+</body>
+
+<footer>
+    <div class="footer-content">
+        <span>&copy; 2024 - I-infotec - Desenvolvimentos de Softwares</span>
+    </div>
+</footer>
+
+</html>
