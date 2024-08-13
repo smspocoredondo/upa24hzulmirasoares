@@ -72,12 +72,12 @@ function addOrUpdateEntry() {
 
     novaLinha.insertCell(0).innerText = categoria;
     novaLinha.insertCell(1).innerText = nome;
-    novaLinha.insertCell(2).innerText = turno;
-    novaLinha.insertCell(3).innerText = dataInicio;
-    novaLinha.insertCell(4).innerText = horaInicio;
-    novaLinha.insertCell(5).innerText = dataFim;
-    novaLinha.insertCell(6).innerText = horaFim;
-    novaLinha.insertCell(7).innerText = setor;
+    novaLinha.insertCell(2).innerText = setor;
+    novaLinha.insertCell(3).innerText = turno;
+    novaLinha.insertCell(4).innerText = dataInicio;
+    novaLinha.insertCell(5).innerText = horaInicio;
+    novaLinha.insertCell(6).innerText = dataFim;
+    novaLinha.insertCell(7).innerText = horaFim;
     novaLinha.insertCell(8).innerText = horasTrabalhadas;
 }
 
@@ -110,9 +110,9 @@ async function generatePDF() {
     try {
         // Verifique se a imagem está corretamente carregada
         const imgData = './logo_poco.png'; // ou use um código base64 se disponível
-        const imgWidth = 25;
-        const imgHeight = 10;
-        const x = 30;
+        const imgWidth = 30;
+        const imgHeight = 12;
+        const x = 20;
         const y = 6;
 
         doc.addImage(imgData, 'PNG', x, y, imgWidth, imgHeight);
@@ -194,4 +194,5 @@ document.getElementById('generateExcelButton').addEventListener('click', () => {
     generateExcel();
     clearForm(); // Limpa os campos do formulário após gerar o Excel
 });
+
 
