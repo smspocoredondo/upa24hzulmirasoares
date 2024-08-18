@@ -210,3 +210,14 @@ function gerarExcel() {
     // Gera o arquivo Excel e inicia o download
     XLSX.writeFile(wb, `Escala_funcionarios_${date}_${time}.xlsx`);
 }
+document.getElementById('logoutButton').addEventListener('click', function () {
+    // Aqui você pode colocar o código para realizar o logout
+    // console.log('Logout iniciado');
+
+    // Exemplo: Redirecionar para a página de login
+    window.location.href = 'home.html';
+
+    // Ou limpar dados de usuário armazenados (se houver)
+    // localStorage.clear(); // Exemplo de limpeza de dados de sessão
+});
+
