@@ -43,7 +43,7 @@ li{
     padding: 10px;
     text-decoration: none;
     display: inline-block;
-    background-color: #177cb6;
+    background-color: #165c08;
 
 }
 
@@ -54,11 +54,11 @@ li a{
 }
 
 li a:hover{
-    background-color: rgb(115, 162, 233);
+    background-color: #165c08;
 }
 
 footer {
-    background-color: #175fcc;
+    background-color: #165c08;
     color: white;
     padding: 10px;
     text-align: center;
