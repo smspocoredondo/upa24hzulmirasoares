@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPA24H - Zilmira Saores</title>
+    <link rel="stylesheet" href="esca_styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <button onclick="gerarPDF()">Gerar PDF</button>
+    <button onclick="gerarExcel()">Gerar Excel</button>
+</head>
+<h1>Escala de Funcionários</h1>
+
+<body>
+    <div class="container">
+
+        <table id="tabela-funcionarios">
+            <thead>
+                <tr>
+                    <th>Setor</th>
+                    <th colspan="34">Dias</th>
+                </tr>
+                <tr>
+                    <th>Função</th>
+                    <th>Nome</th>
+                    <th>COREN/CRM</th>
+                    <th>CH</th>
+                    <script>
+                        for (let i = 1; i <= 31; i++) {
+                            document.write(`<th>${i}</th>`);
+                        }
+                    </script>
+                </tr>
+            </thead>
+            <tbody id="tabela-body">
+                <!-- Linhas serão adicionadas dinamicamente -->
+            </tbody>
+        </table>
+
+    </div><br>
+    <!-- Campo para Observações -->
+    <div class="observacoes">
+        <label for="observacoes-textarea">Observações:</label><br>
+        <textarea id="observacoes-textarea" rows="4" cols="100"
+            placeholder="Digite suas observações aqui..."></textarea>
+    </div>
+    </div><br>
+    <div class="button-group">
+        <button onclick="adicionarLinha()">Adicionar Funcionário</button>
+        <button onclick="resetarTabela()">Apagar Tabela</button>
+
+    </div>
+    <script src="esca_script.js"></script>
+    <div>
+        <footer>
+            <div class="footer-content">
+                <span>&copy; 2024 - I-infotec - Desenvolvimentos de Softwares</span>
+                <!-- Adicione mais links ou informações aqui -->
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
