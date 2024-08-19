@@ -32,6 +32,15 @@ function adicionarLinha() {
     `;
 
     tbody.appendChild(tr);
+
+ // Adiciona o evento de transformação para letras maiúsculas
+    const inputs = tr.querySelectorAll('input[type="text"]');
+    inputs.forEach(input => {
+        input.addEventListener('input', function () {
+            this.value = this.value.toUpperCase();
+        });
+    });
+    
     // Coloca o foco no primeiro input da nova linha
     tr.querySelector('input[type="text"]').focus();
     contador++;
@@ -80,10 +89,10 @@ function gerarPDF() {
         startY: 20,
         theme: 'grid',
         styles: {
-            fontSize: 8,  // Ajuste do tamanho da fonte
+            fontSize: 7,  // Ajuste do tamanho da fonte
             cellPadding: 1, // Ajuste do espaçamento interno das células
             overflow: 'linebreak', // Quebra de linha automática
-            halign: 'center', // Centraliza horizontalmente o conteúdo das células
+            halign: 'left', // Centraliza horizontalmente o conteúdo das células
             valign: 'middle', // Centraliza verticalmente o conteúdo das células
             minCellHeight: 5, // Ajuste da altura mínima das células
         },
