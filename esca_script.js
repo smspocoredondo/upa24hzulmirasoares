@@ -133,8 +133,8 @@ function gerarPDF() {
             const textX = (pageWidth - textWidth) / 2;
 
             // Adiciona uma imagem no cabeçalho
-            const imgBase64 = 'logo_poco.png'; // Substitua pela sua imagem em base64
-            doc.addImage(imgBase64, 'PNG', 22, 3, 25, 12); // Adiciona a imagem na posição (10, 10) com largura 30 e altura 15
+            const imgBase64 = 'UPA_24_Horas.jpg'; // Substitua pela sua imagem em base64
+            doc.addImage(imgBase64, 'PNG', 22, 3, 36, 16); // Adiciona a imagem na posição (10, 10) com largura 30 e altura 15
 
             // Adiciona o título
             doc.text(title, textX, 12); // Centraliza o título logo abaixo da imagem
