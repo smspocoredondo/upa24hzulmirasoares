@@ -79,6 +79,16 @@ function addOrUpdateEntry() {
     novaLinha.insertCell(6).innerText = dataFim;
     novaLinha.insertCell(7).innerText = horaFim;
     novaLinha.insertCell(8).innerText = horasTrabalhadas;
+    
+ // Adiciona botão de remoção
+    const removerCelula = novaLinha.insertCell(9);  // Cria a nova célula para o botão
+    const removerBotao = document.createElement('button'); // Cria o botão
+    removerBotao.innerText = 'Remover'; // Define o texto do botão
+    removerBotao.classList.add('btn', 'btn-danger'); // Adiciona as classes de estilo
+    removerBotao.onclick = function() { // Adiciona a função para remover a linha ao clicar
+        tabela.deleteRow(novaLinha.rowIndex - 1);
+    };
+    removerCelula.appendChild(removerBotao); // Adiciona o botão à célula
 }
 
 // Função para calcular o total de horas trabalhadas
