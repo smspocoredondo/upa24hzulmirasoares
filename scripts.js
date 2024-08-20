@@ -14,10 +14,10 @@ function calcularHorasTrabalhadas(dataInicio, horaInicio, dataFim, horaFim) {
 
     let diferencaMilissegundos = dataHoraFim - dataHoraInicio;
 
-    if (diferencaMilissegundos < 0) {
-        alert("A data e hora de saída devem ser posteriores à data e hora de entrada.");
-        return "0h 0min";
-    }
+   // if (diferencaMilissegundos < 0) {
+       // alert("A data e hora de saída devem ser posteriores à data e hora de entrada.");
+      //  return "0h 0min";
+   // }
 
     const horasTrabalhadas = Math.floor(diferencaMilissegundos / (1000 * 60 * 60));
     const minutosTrabalhados = Math.floor((diferencaMilissegundos % (1000 * 60 * 60)) / (1000 * 60));
